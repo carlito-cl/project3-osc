@@ -20,7 +20,6 @@ const int64_t SIZE = 16384ULL;
 const int64_t REPEAT = 1ULL;
 
 int main(int argc, char* argv[]) {
-	float* res = new float[SIZE * SIZE];  // result of mean filter
 	float* img = new float[SIZE * SIZE];
 
 	// fill with dummy data
@@ -34,7 +33,8 @@ int main(int argc, char* argv[]) {
 	uint64_t dummy = 0;
 
 	// ADJUST BELOW, BUT keep writing to the dummy variable
-	
+	float* res = new float[SIZE * SIZE];  // result of mean filter
+
 	// Apply an averaging imaging filter to some input image, and write in to an output image.
 	// A pixel in the output image is calculated by averaging 9 pixels: the pixel at the same
 	// coordinates in the input image, and the adjecent pixels.
@@ -58,10 +58,10 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	// ADJUST ABOVE, BUT keep writing to the dummy variable
-
-	delete[] img;
 	delete[] res;
+
+	// ADJUST ABOVE, BUT keep writing to the dummy variable
+	delete[] img;
 
 	struct rusage usage;
 	getrusage(RUSAGE_SELF, &usage);
