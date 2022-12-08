@@ -6,6 +6,7 @@
 // function/class definitions you are going to use
 #include <sys/resource.h>
 #include <sys/time.h>
+#include <unistd.h>
 
 #include <algorithm>
 #include <iomanip>
@@ -77,6 +78,7 @@ int main(int argc, char* argv[]) {
   std::cout << "voluntary context switches:   " << usage.ru_nvcsw << std::endl;
   std::cout << "involuntary context switches: " << usage.ru_nivcsw << std::endl;
   std::cout << "dummy value (ignore):         " << dummy << std::endl; // this value is printed to avoid optimisations
+  std::cout << "typical page size:            " << sysconf(_SC_PAGESIZE) << std::endl;
   // ...
   return 0;
 }
