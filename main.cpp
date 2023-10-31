@@ -7,7 +7,7 @@
 #include <sys/resource.h>
 #include <sys/time.h>
 #include <unistd.h>
-
+#include <cstdint>
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
